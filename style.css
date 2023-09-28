@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F7F7F7;
+    font-family: 'Montserrat';
+}
+
+nav {
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    padding: .3rem;
+}
+
+li {
+    padding: .8rem;
+}
+
+ul li.title {
+    font-size: 2rem;
+}
+
+ul li.quiz {
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+img {
+    width: 23rem;
+    border-radius: 20px;
+}
+
+
+main section {
+    margin: 0 auto;
+    max-width: 150ch;
+}
+
+
+
+.num-question {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-shadow: lightgray 2px 2px;
+    max-width: 103ch;
+}
+
+.question {
+    display: flex;
+    background: linear-gradient(#E6E6E6, #F7F7F7);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    align-items: center;
+    height: 13rem;
+    margin-bottom: 6rem;
+    max-width: 150ch;
+}
+
+.question h2 {
+    padding-left: 7rem;
+}
+
+.buttons button {
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem .2rem lightgray;
+
+    display: inline-flex;
+    width: 30rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.buttons button:hover {
+    background: linear-gradient(#202129, #33353f);
+    color: #d1cece;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem .2rem lightgray;
+
+    display: inline-flex;
+    width: 30rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.valid {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    font-size: 2rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#272932, #474A58);
+    padding: .8rem 0 .8rem 0;
+    color: #F7F7F7;
+    bottom: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: absolute;
+    width: 100%;
+}

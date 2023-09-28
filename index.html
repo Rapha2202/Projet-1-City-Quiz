@@ -4,13 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Quiz</title>
-    <script src="index.js"></script>
+    <title>Vogue Merry - Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li class="title">The Vogue Merry</li>
+            <li class="quiz">General Quiz</li>
+        </ul>
+    </nav>
 
+    <main>
+        <section class="num-question">
+            <h1 id="num-question">Question 1 sur 20 :</h1>
+        </section>
+
+        <section class="question">
+            <img src="assets/ligue1.jpg" alt="Image de question" id="img">
+            <h2 id="quest">Au foot, quel équipe Française a gagner le plus de Ligue 1?</h2>
+        </section>
+
+        <section class="buttons">
+            <button class="answer1">
+                <h3 class="display1">Saint-Étienne</h3>
+            </button>
+            <button class="answer2">
+                <h3 class="display2">Marseille</h3>
+            </button>
+        </section>
+        <section class="buttons">
+            <button class="answer3">
+                <h3 class="display3">Bordeaux</h3>
+            </button>
+            <button class="answer4">
+                <h3 class="display4">Paris-Saint-Germain</h3>
+            </button>
+        </section>
+
+        <section class="valid">
+            <h4 id="numv">0 Bonne réponse sur 20</h4>
+        </section>
+    </main>
+
+    <footer>
+        © Wilder 2023
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
