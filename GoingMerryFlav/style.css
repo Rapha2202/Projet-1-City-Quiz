@@ -63,6 +63,7 @@ main {
     transition: background-size 10s linear;
 }
 div > button {
+    border: none;
     border-radius: 10px;
     background: linear-gradient(#272932, #474A58);
     color: #F7F7F7;
@@ -72,7 +73,7 @@ div > button {
 .bloc-answer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+    gap: 1.5em;
 }
 #result {
     color: #272932;
@@ -113,6 +114,7 @@ footer {
     .bloc-container {
         display: flex;
         justify-content: center;
+        margin-bottom: 2em;
     }
     #question {
         padding-left: 1em;
@@ -120,5 +122,16 @@ footer {
     }
     #image {
         margin: 0;
+    }
+    .progressbar{
+        height: 1.5em;
+        margin-bottom: 2em;
+    }
+    .bloc-answer {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #result {
+        margin: 3em;
     }
 }
