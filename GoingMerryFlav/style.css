@@ -1,0 +1,124 @@
+* {
+    font-family: montserrat, sans-serif;
+    margin: 0;
+}
+header {
+    text-align: center;
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 5px darkgrey;
+}
+#title {
+    font-size: 1.5em;
+    padding-top: 0.8em;
+}
+#quiz-name {
+    font-size: 1em;
+    padding-bottom: 0.8em;
+}
+body {
+    background-color: #F7F7F7;
+}
+main {
+    padding-top: 1.5em;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+#question-number {
+    padding-bottom: 0.5em;
+    color: #272932;
+    font-size: 1.2em;
+}
+.bloc-container {
+    background: linear-gradient(#E6E6E6, #F1F1F1);
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
+    margin-bottom: 1em;
+}
+#image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+}
+#question {
+    color: #272932;
+}
+.progressbar {
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 0;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    max-width: 150ch;
+    border-radius: 10px;
+}
+.progressbar {
+    border: 1px solid #272932;
+    background-image: linear-gradient(to left, #474A58, #272932 100%);
+}
+.progressbar.animation {
+    background-size: 100%;
+    transition: background-size 10s linear;
+}
+div > button {
+    border-radius: 10px;
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
+}
+.bloc-answer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+#result {
+    color: #272932;
+    text-align: center;
+    margin: 1.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+footer {
+    background: linear-gradient(#474A58, #272932);
+    color: #F7F7F7;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+@media screen and (min-width: 750px) { 
+    header {
+        text-align: left;
+        line-height: 0;
+    }
+    #title {
+        font-size: 1.8em;
+        padding-top: 1.2em;
+        padding-left: 0.5em;
+    }
+    #quiz-name {
+        text-align: center;
+        padding-top: 0.2em;
+        padding-bottom: 2em;
+    }
+    main {
+        padding-top: 3em;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .bloc-container {
+        display: flex;
+        justify-content: center;
+    }
+    #question {
+        padding-left: 1em;
+        margin: auto;
+    }
+    #image {
+        margin: 0;
+    }
+}
