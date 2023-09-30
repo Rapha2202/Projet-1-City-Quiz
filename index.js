@@ -262,6 +262,11 @@ const goodNumber = document.querySelector("#numv")
 questionNumber.innerHTML = `Question 1 sur ${questions.length} :`
 goodNumber.innerHTML = `0 Bonne réponse sur ${questions.length}`
 nextButton.disabled = true
+let name = prompt("Quel est votre nom")
+while (name === null || name == "") {
+    name = prompt("Quel est votre nom")
+}
+
 
 
 /**
@@ -371,11 +376,90 @@ nextButton.addEventListener("click", function (event) {
     } else {    //Affichage du menu de fin
         let endTime = (Math.round(new Date().getTime() / 1000)) - startTime
 
+        const leaderboard = [
+            {
+                "user": "user 1",
+                "time": 22,
+                "good": 20,
+            },
+            {
+                "user": "user 2",
+                "time": 27,
+                "good": 18,
+            },
+            {
+                "user": "user 3",
+                "time": 31,
+                "good": 17,
+            },
+            {
+                "user": "user 4",
+                "time": 40,
+                "good": 15,
+            },
+            {
+                "user": "user 5",
+                "time": 35,
+                "good": 13,
+            },
+            {
+                "user": "user 6",
+                "time": 31,
+                "good": 11,
+            },
+            {
+                "user": "user 7",
+                "time": 20,
+                "good": 10,
+            },
+            {
+                "user": "user 8",
+                "time": 26,
+                "good": 8,
+            },
+            {
+                "user": "user 9",
+                "time": 38,
+                "good": 7,
+            },
+            {
+                "user": "user 10",
+                "time": 50,
+                "good": 1,
+            },
+            {
+                "user": name,
+                "time": endTime,
+                "good": numberGoodAnswer,
+            }
+        ]
+
         end.style.display = "flex"
+
+        let leaderboardFiltered = (joueur) => {
+            return joueur.sort((a, b) => {
+                return b.good - a.good
+            })
+        }
+
+        let leaderboardFiltered2 = (leaderboardFiltered) => {
+            return leaderboardFiltered.sort((a, b) => {
+                return a.time - b.time
+            })
+        }
+
+        console.log(leaderboardFiltered(leaderboard))
+        console.log(leaderboardFiltered2(leaderboard))
+
+
         if (numberGoodAnswer > 1) {
-            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonnes réponses sur ${questions.length} en ${endTime} secondes`
+            endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonnes réponses sur ${questions.length} en ${endTime} secondes </br>`
         } else {
-            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes`
+            endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes </br>`
+        }
+
+        for (let i = 0; i < leaderboard.length; i++) {
+            endTxt.innerHTML += `#${[i + 1]} Nom: ${leaderboardFiltered(leaderboard)[i].user}, Points: ${leaderboardFiltered(leaderboard)[i].good}, Temps:${leaderboardFiltered(leaderboard)[i].time} secondes</br>`
         }
     }
 
