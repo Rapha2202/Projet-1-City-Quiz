@@ -228,6 +228,7 @@ const questions = [
 let runningQuestion = 0
 let numberGoodAnswer = 0
 let time
+let startTime
 
 const questionNumber = document.querySelector("#num-question")
 
@@ -304,6 +305,8 @@ function timer() {
  */
 
 startButton.addEventListener("click", function () {
+    startTime = Math.round(Date.now() / 1000)
+
     start.style.display = "none"
     quest.innerHTML = questions[runningQuestion].questiontxt
     img.src = questions[runningQuestion].image
@@ -324,8 +327,6 @@ allButtons.forEach((buttons) => {
     buttons.addEventListener("click", function (event) {
         clearTimeout(time)
         for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
-            console.log(questions[runningQuestion].repv[i])
-            console.log(event.srcElement.className)
             if (questions[runningQuestion].repv[i] == event.srcElement.className) {
                 numberGoodAnswer++
 
@@ -355,7 +356,6 @@ nextButton.addEventListener("click", function (event) {
     runningQuestion++
     if (runningQuestion < questions.length) {
 
-
         quest.innerHTML = questions[runningQuestion].questiontxt
         img.src = questions[runningQuestion].image
         backQuest.classList.remove("info")
@@ -369,11 +369,13 @@ nextButton.addEventListener("click", function (event) {
 
         timer()
     } else {    //Affichage du menu de fin
+        let endTime = (Math.round(new Date().getTime() / 1000)) - startTime
+
         end.style.display = "flex"
         if (numberGoodAnswer > 1) {
-            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonnes réponses sur ${questions.length}`
+            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonnes réponses sur ${questions.length} en ${endTime} secondes`
         } else {
-            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length}`
+            endTxt.innerHTML = `Tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes`
         }
     }
 
