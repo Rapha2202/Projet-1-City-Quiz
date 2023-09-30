@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <div class="start">
+        <button class="start-button">Start</button>
+    </div>
+
+    <div class="end">
+        <p class="endTxt"></p>
+    </div>
+
+
     <nav>
         <ul>
             <li class="title">The Vogue Merry</li>
@@ -19,33 +28,29 @@
 
     <main>
         <section class="num-question">
-            <h1 id="num-question">Question 1 sur 20 :</h1>
+            <h1 id="num-question">Numéro de question</h1>
         </section>
 
         <section class="question">
-            <img src="assets/ligue1.jpg" alt="Image de question" id="img">
-            <h2 id="quest">Au foot, quel équipe Française a gagner le plus de Ligue 1?</h2>
+            <img src="assets/wcs.png" alt="Image de question" id="img">
+            <h2 id="quest">Ici sera affiché la question après le début du Quiz</h2>
         </section>
 
-        <section class="buttons">
-            <button class="answer1">
-                <h3 class="display1">Saint-Étienne</h3>
-            </button>
-            <button class="answer2">
-                <h3 class="display2">Marseille</h3>
-            </button>
-        </section>
-        <section class="buttons">
-            <button class="answer3">
-                <h3 class="display3">Bordeaux</h3>
-            </button>
-            <button class="answer4">
-                <h3 class="display4">Paris-Saint-Germain</h3>
-            </button>
-        </section>
+        <div class="progressbar"></div>
+
+        <div class="buttons">
+            <button class="answer1">Réponse A</button>
+            <button class="answer2">Réponse B</button>
+        </div>
+        <div class="buttons">
+            <button class="answer3">Réponse C</button>
+            <button class="answer4">Réponse D</button>
+        </div>
+
+        <button class="nextButton">Question Suivante</button>
 
         <section class="valid">
-            <h4 id="numv">0 Bonne réponse sur 20</h4>
+            <h4 id="numv">Nombre de bonne réponse</h4>
         </section>
     </main>
 
