@@ -56,7 +56,7 @@ const questions = [
     },
     {
         "id": 6,
-        "questiontxt": "Dans quelle discipline ne trouve t-on pas de hakas?",
+        "questiontxt": "Dans quelle discipline ne trouve t-on pas de Kata?",
         "image": "",
         "answer1": "Karaté",
         "answer2": "Judo",
@@ -101,7 +101,7 @@ const questions = [
     {
         "id": 10,
         "questiontxt": "Dans Hunter x Hunter que représente les numeros de la brigade fantome?",
-        "image": "",
+        "image": "assets/brigade-fantome.jpg",
         "answer1": "Les mois de l'année",
         "answer2": "Les jours de la semaine",
         "answer3": "Les saisons",
@@ -112,7 +112,7 @@ const questions = [
     {
         "id": 11,
         "questiontxt": "Quel est le nom de \"l\'anciennement fifa\" en 2023?",
-        "image": "",
+        "image": "assets/fifa.jpg",
         "answer1": "UFC 24",
         "answer2": "Call of Duty 24",
         "answer3": "OFC 24",
@@ -123,7 +123,7 @@ const questions = [
     {
         "id": 12,
         "questiontxt": "Quand est mort Michael Jackson?",
-        "image": "",
+        "image": "assets/michael.jpg",
         "answer1": "25 juin 2009",
         "answer2": "25 janvier 2009",
         "answer3": "25 decembre (an 1)",
@@ -134,7 +134,7 @@ const questions = [
     {
         "id": 13,
         "questiontxt": "Au catch, Undertaker possède une gimmick lors de son entrée, quelle est-elle?",
-        "image": "",
+        "image": "assets/undertaker.jpg",
         "answer1": "Selfie filtre mort vivant",
         "answer2": "Il met thriller et danse",
         "answer3": "Il tourne ses yeux au blancs",
@@ -144,8 +144,8 @@ const questions = [
     },
     {
         "id": 14,
-        "questiontxt": "Dans Bocchi The Rock, quel est le problème de l'héroine: ",
-        "image": "",
+        "questiontxt": "Dans Bocchi The Rock, quel est le problème de l'héroine?",
+        "image": "assets/bocchi.jpg",
         "answer1": "Harcélement imaginaire",
         "answer2": "Full raciste",
         "answer3": "Point faible, trop forte",
@@ -156,7 +156,7 @@ const questions = [
     {
         "id": 15,
         "questiontxt": "La bonne reponse est la quatrième, choisis la",
-        "image": "",
+        "image": "assets/lequel.jpg",
         "answer1": "C'est une mauvaise réponse",
         "answer2": "Je ne te la conseille pas",
         "answer3": "Celle la elle sent pas bon",
@@ -166,7 +166,7 @@ const questions = [
     },
     {
         "id": 16,
-        "questiontxt": "Parmis ces Mike, lequel a composé la musique de l'Exorciste",
+        "questiontxt": "Parmis ces Mike, lequel a composé la musique de l'Exorciste?",
         "image": "",
         "answer1": "Mike Tyson",
         "answer2": "Mike Jagger",
@@ -174,51 +174,51 @@ const questions = [
         "answer4": "Mike Maignan",
         "repv": ["answer3"],
         "info": ""
-    },/*
+    },
     {
         "id": 17,
-        "questiontxt": "",
+        "questiontxt": "Dans l'animé Sword Art Online comment s'appel le systeme qui entretien le Jeux Vidéo dans lequel le héro est bloqué?",
         "image": "",
-        "answer1": "",
-        "answer2": "",
-        "answer3": "",
-        "answer4": "",
-        "repv": [""],
+        "answer1": "Cardinal",
+        "answer2": "Administrator",
+        "answer3": "Aincrad",
+        "answer4": "Yggdrasil",
+        "repv": ["answer1"],
         "info": ""
     },
     {
         "id": 18,
-        "questiontxt": "",
+        "questiontxt": "Quel est le meilleur language orienté objet?",
         "image": "",
-        "answer1": "",
-        "answer2": "",
-        "answer3": "",
-        "answer4": "",
-        "repv": [""],
+        "answer1": "PHP",
+        "answer2": "JavaScript",
+        "answer3": "HTML",
+        "answer4": "Java",
+        "repv": ["answer2"],
         "info": ""
     },
     {
         "id": 19,
-        "questiontxt": "",
+        "questiontxt": "Dans Hunter x Hunter comment est mort Meruem le roi des fourmi chimeres?",
         "image": "",
-        "answer1": "",
-        "answer2": "",
-        "answer3": "",
-        "answer4": "",
-        "repv": [""],
+        "answer1": "Super attaque du Héro",
+        "answer2": "Insecticide",
+        "answer3": "Bombe Nucleaire",
+        "answer4": "Noyade",
+        "repv": ["answer2"],
         "info": ""
     },
     {
         "id": 20,
-        "questiontxt": "",
+        "questiontxt": "Dans One Piece quel est le meilleur navire?",
         "image": "",
-        "answer1": "",
-        "answer2": "",
-        "answer3": "",
-        "answer4": "",
-        "repv": [""],
+        "answer1": "Vogue merry qui ne coule pas",
+        "answer2": "Le Thousand Sunny (ca brille)",
+        "answer3": "Oro Jackson (avec roger vivant)",
+        "answer4": "Red Force gitanos",
+        "repv": ["answer1"],
         "info": ""
-    }*/
+    }
 ]
 
 /**
@@ -253,6 +253,8 @@ const answer4 = document.querySelector(".answer4")
 const nextButton = document.querySelector(".nextButton")
 
 const goodNumber = document.querySelector("#numv")
+
+const table = document.querySelector(".leaderboard")
 
 
 /**
@@ -374,7 +376,7 @@ nextButton.addEventListener("click", function (event) {
 
         timer()
     } else {    //Affichage du menu de fin
-        let endTime = (Math.round(new Date().getTime() / 1000)) - startTime
+        let endTime = (Math.round(Date.now() / 1000)) - startTime
 
         const leaderboard = [
             {
@@ -438,18 +440,11 @@ nextButton.addEventListener("click", function (event) {
 
         let leaderboardFiltered = (joueur) => {
             return joueur.sort((a, b) => {
+                return a.time - b.time
+            }).sort((a, b) => {
                 return b.good - a.good
             })
         }
-
-        let leaderboardFiltered2 = (leaderboardFiltered) => {
-            return leaderboardFiltered.sort((a, b) => {
-                return a.time - b.time
-            })
-        }
-
-        console.log(leaderboardFiltered(leaderboard))
-        console.log(leaderboardFiltered2(leaderboard))
 
 
         if (numberGoodAnswer > 1) {
@@ -458,9 +453,17 @@ nextButton.addEventListener("click", function (event) {
             endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes </br>`
         }
 
-        for (let i = 0; i < leaderboard.length; i++) {
+        /*for (let i = 0; i < leaderboard.length; i++) {
             endTxt.innerHTML += `#${[i + 1]} Nom: ${leaderboardFiltered(leaderboard)[i].user}, Points: ${leaderboardFiltered(leaderboard)[i].good}, Temps:${leaderboardFiltered(leaderboard)[i].time} secondes</br>`
+        }*/
+
+        function displayLeaderboard() {
+            let theExport = ""
+            leaderboardFiltered(leaderboard).forEach((player) => theExport += '<tr><td>' + player.user + '</td><td>' + player.good + '</td><td>' + player.time + '</td></tr>');
+            table.innerHTML = theExport; //Why have good ID's when you can have bad ones? | Who needs children when we can use innerHTML?
         }
+    
+        displayLeaderboard()
     }
 
 })
