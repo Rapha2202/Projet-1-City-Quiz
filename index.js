@@ -90,7 +90,7 @@ const questions = [
     {
         "id": 9,
         "questiontxt": "Dans 'Dragon Ball', sur quelle île se déroule les championnats du monde d'arts martiaux?",
-        "image": "assets/championat.jpg",
+        "image": "assets/championnat.jpg",
         "answer1": "L'île Papaya",
         "answer2": "L'île Kiwi",
         "answer3": "L'île Coco",
@@ -229,6 +229,7 @@ let runningQuestion = 0
 let numberGoodAnswer = 0
 let time
 let startTime
+let name
 
 const questionNumber = document.querySelector("#num-question")
 
@@ -264,15 +265,6 @@ const table = document.querySelector("#leaderboard")
 questionNumber.innerHTML = `Question 1 sur ${questions.length} :`
 goodNumber.innerHTML = `0 Bonne réponse sur ${questions.length}`
 nextButton.disabled = true
-let name = prompt("Quel est votre nom")
-while (name === null || name == "") {
-    name = prompt("Quel est votre nom")
-}
-
-if(name.toLowerCase() === "sacod"){
-    alert("Godmode Avtivé")
-}
-
 
 
 /**
@@ -330,7 +322,14 @@ function timer() {
  * Start Button
  */
 
-startButton.addEventListener("click", function () {
+startButton.addEventListener("click", function (event) {
+    name = document.forms["name"]["name"].value
+    event.preventDefault();
+
+    if(name.toLowerCase() === "sacod"){
+        alert("Godmode Activé")
+    }
+
     startTime = Math.round(Date.now() / 1000)
 
     start.style.display = "none"
@@ -402,56 +401,59 @@ nextButton.addEventListener("click", function (event) {
     } else {    //Affichage du menu de fin
         let endTime = (Math.round(Date.now() / 1000)) - startTime
 
+        const multiName = ['Abigail', 'Alice', 'Amber', 'Amelia', 'Amy', 'Ava', 'Brooke','Caitlin', 'Charlotte', 'Chloe', 'Daisy', 'Elizabeth', 'Ella', 'Ellie','Emily', 'Emma', 'Erin', 'Eva', 'Evie', 'Freya', 'Grace', 'Hannah','Holly', 'Imogen', 'Isabel', 'Isabella', 'Isabelle', 'Isla', 'Jasmine','Jessica', 'Katie', 'Keira', 'Leah', 'Lilly', 'Lily', 'Lola', 'Lucy','Matilda', 'Megan', 'Mia', 'Millie', 'Molly', 'Olivia', 'Phoebe','Poppy', 'Ruby', 'Scarlett', 'Sophia', 'Sophie', 'Summer', 'Adam','Alex', 'Alexander', 'Alfie', 'Archie', 'Benjamin', 'Callum','Cameron', 'Charlie', 'Connor', 'Daniel', 'Dylan', 'Edward', 'Ethan','Finley', 'George', 'Harrison', 'Harry', 'Harvey', 'Henry', 'Isaac','Jack', 'Jacob', 'Jake', 'James', 'Jayden', 'Joseph', 'Joshua', 'Leo','Lewis', 'Liam', 'Logan', 'Lucas', 'Luke', 'Matthew', 'Max','Mohammed', 'Muhammad', 'Nathan', 'Noah', 'Oliver', 'Oscar', 'Owen','Rhys', 'Riley', 'Ryan', 'Samuel', 'Thomas', 'Tyler', 'William']
+
+
         const leaderboard = [
             {
-                "user": "user 1",
-                "time": 25,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
+            },
+            {
+                "user": "Boss",
+                "time": 20,
                 "good": 20,
             },
             {
-                "user": "user 2",
-                "time": 48,
-                "good": 18,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 3",
-                "time": 51,
-                "good": 17,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 4",
-                "time": 60,
-                "good": 15,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 5",
-                "time": 55,
-                "good": 13,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 6",
-                "time": 51,
-                "good": 11,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 7",
-                "time": 40,
-                "good": 10,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 8",
-                "time": 46,
-                "good": 8,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
-                "user": "user 9",
-                "time": 58,
-                "good": 7,
-            },
-            {
-                "user": "user 10",
-                "time": 70,
-                "good": 1,
+                "user": multiName[Math.floor(Math.random() * multiName.length)],
+                "time": Math.floor(Math.random() * (90 - 20 + 1) ) + 20,
+                "good": Math.floor(Math.random() * (20 - 1 + 1) ) + 1,
             },
             {
                 "user": name,
@@ -472,9 +474,9 @@ nextButton.addEventListener("click", function (event) {
 
 
         if (numberGoodAnswer > 1) {
-            endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonnes réponses sur ${questions.length} en ${endTime} secondes </br>`
+            endTxt.innerHTML = `Bravo ${name} ! Tu as fini notre Quiz sur un total de ${numberGoodAnswer} / ${questions.length} en ${endTime} secondes </br>`
         } else {
-            endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes </br>`
+            endTxt.innerHTML = `Bravo ${name} ! Tu as fini notre Quiz sur un total de ${numberGoodAnswer} / ${questions.length} en ${endTime} secondes </br>`
         }
 
         function displayLeaderboard() {

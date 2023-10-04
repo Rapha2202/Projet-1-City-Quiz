@@ -11,7 +11,17 @@
 
 <body>
     <div class="start">
-        <button id="start-button">Start</button>
+
+        <form action="" method="get" class="form-example" name="name">
+            <div class="form-example">
+              <br for="name">Quel est votre nom? </br></label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="form-example">
+              <input id="start-button" type="submit" value="Start"/>
+            </div>
+          </form>
+
     </div>
 
     <div class="end">
@@ -35,7 +45,7 @@
             <h3 id="num-question">Question 1 sur 20 :</h3>
 
         <section class="question">
-            <img src="assets/wcs.png" alt="Image de question" id="img">
+            <img src="assets/wcs.jpg" alt="Image de question" id="img">
             <h3 id="quest">Ici sera affiché la question après le début du Quiz</h3>
         </section>
 
