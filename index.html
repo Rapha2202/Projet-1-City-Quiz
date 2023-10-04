@@ -11,36 +11,32 @@
 
 <body>
     <div class="start">
-        <button class="start-button">Start</button>
+        <button id="start-button">Start</button>
     </div>
 
     <div class="end">
         <table>
             <thead>
-                <tr><th class="endTxt" colspan="3"></th></tr>
+                <tr><th id="endTxt" colspan="3"></th></tr>
               <tr><th>Joueur</th><th>Score</th><th>Temps</th></tr>
             </thead>
-            <tbody class="leaderboard"></tbody>
+            <tbody id="leaderboard"></tbody>
         </table></p>
     </div>
 
 
 
-    <nav>
-        <ul>
-            <li class="title">The Vogue Merry</li>
-            <li class="quiz">General Quiz</li>
-        </ul>
-    </nav>
+    <header>
+        <h1 id="title">The Vogue Merry</h1>
+        <h2 id="quiz-name">General Quiz</h2>
+    </header>
 
     <main>
-        <section class="num-question">
-            <h1 id="num-question">Question 1 sur 20 :</h1>
-        </section>
+            <h3 id="num-question">Question 1 sur 20 :</h3>
 
         <section class="question">
             <img src="assets/wcs.png" alt="Image de question" id="img">
-            <h2 id="quest">Ici sera affiché la question après le début du Quiz</h2>
+            <h3 id="quest">Ici sera affiché la question après le début du Quiz</h3>
         </section>
 
         <div class="progressbar"></div>
@@ -48,14 +44,12 @@
         <div class="buttons">
             <button class="answer1">Réponse A</button>
             <button class="answer2">Réponse B</button>
-        </div>
-        <div class="buttons">
             <button class="answer3">Réponse C</button>
             <button class="answer4">Réponse D</button>
         </div>
 
         <div class="next">
-            <button class="nextButton">Question Suivante</button>
+            <button id="nextButton">Question Suivante</button>
         </div>
 
 

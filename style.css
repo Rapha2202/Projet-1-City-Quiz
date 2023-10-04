@@ -8,82 +8,59 @@ body {
     font-family: sans-serif;
 }
 
-nav {
+header {
+    text-align: center;
     background: linear-gradient(#272932, #474A58);
     color: #F7F7F7;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 5px darkgrey;
 }
 
-ul li {
-    list-style: none;
-    margin-left: 1rem;
+#title {
+    font-size: 1.5em;
+    padding-top: 0.2em;
 }
 
-ul {
-    display: flex;
-    align-items: center;
-    padding: .3rem;
-}
-
-li {
-    padding: .8rem;
-}
-
-ul li.title {
-    font-size: 2rem;
-}
-
-ul li.quiz {
-    font-size: 1.5rem;
-    margin: 0 auto;
+#quiz {
+    font-size: 1em;
+    padding-bottom: 0.8em;
 }
 
 img {
-    width: 23rem;
-    border-radius: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
 }
 
 
-main section {
-    margin: 0 auto;
-    max-width: 150ch;
+main {
+    padding-top: 1.2em;
+    margin-left: 12%;
+    margin-right: 12%;
 }
 
-
-
-.num-question {
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
-    text-shadow: lightgray 2px 2px;
-    max-width: 103ch;
+#num-question {
+    padding-bottom: 0.5em;
+    color: #272932;
+    font-size: 1.2em;
 }
 
 .question {
-    display: flex;
     background: linear-gradient(#E6E6E6, #F7F7F7);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 20px;
-    box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    box-shadow: 0px 5px 5px darkgrey;
     align-items: center;
-    height: 13rem;
-    margin-bottom: 2rem;
-    max-width: 150ch;
-    color: black;
+    height: auto;
+    margin-bottom: 1rem;
+    color: #272932;
+    font-size: .8rem;
 }
 
 .question.info {
-    display: flex;
     background: linear-gradient(#272932, #474A58);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: .2rem .2rem .2rem .2rem lightgray;
-    align-items: center;
-    height: 13rem;
-    margin-bottom: 2rem;
-    max-width: 150ch;
     color: #F7F7F7;
+    font-size: .7rem;
 }
 
 .question h2 {
@@ -91,43 +68,27 @@ main section {
 }
 
 .buttons button {
+    border: none;
+    border-radius: 10px;
     background: linear-gradient(#272932, #474A58);
     color: #F7F7F7;
-    border-radius: .5rem;
-    box-shadow: .2rem .2rem .2rem .2rem lightgray;
-
-    display: inline-flex;
-    width: 30rem;
-    padding: 1.5rem 1rem 1.5rem 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
 }
 
 .buttons button:hover:enabled {
     background: linear-gradient(#202129, #33353f);
     color: #d1cece;
-    border-radius: .5rem;
-    box-shadow: .2rem .2rem .2rem .2rem lightgray;
-
-    display: inline-flex;
-    width: 30rem;
-    padding: 1.5rem 1rem 1.5rem 1rem;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
 }
 
 .next {
@@ -136,37 +97,33 @@ main section {
     margin-top: 1rem;
 }
 
-.nextButton {
-    padding: 1rem;
+#nextButton {
+    padding: .8rem;
     border-radius: .5rem;
-    font-size: 1.3rem;
+    font-size: .8rem;
     background-color: #F7F7F7;
 }
 
-.nextButton:hover:enabled {
-    padding: 1rem;
-    border-radius: .5rem;
-    font-size: 1.3rem;
+#nextButton:hover:enabled {
     background-color: #d9dadf;
 }
 
 .valid {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    font-size: 2rem;
+    color: #272932;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: linear-gradient(#474A58, #272932);
-    padding: .8rem 0 .8rem 0;
     color: #F7F7F7;
-    bottom: 0;
-    position: absolute;
+    text-align: center;
+    padding: 0.5em;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 .start {
@@ -182,7 +139,7 @@ footer {
 
 
 
-.start-button {
+#start-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +149,7 @@ footer {
     font-size: 2rem;
 }
 
-.start-button:hover {
+#start-button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,12 +161,11 @@ footer {
 }
 
 .progressbar {
-    height: 2em;
+    height: 1.5em;
     background-repeat: no-repeat;
     background-size: 0;
     margin: 0 auto;
-    max-width: 150ch;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     border-radius: 20px;
 }
 
@@ -223,11 +179,6 @@ footer {
     transition: background-size 10s linear;
 }
 
-.progressbar.info {
-    background-size: 100%;
-    transition: background-size 7s linear;
-}
-
 .end {
     position: fixed;
     width: 100%;
@@ -239,7 +190,7 @@ footer {
     z-index: 100;
 }
 
-.endTxt{
+#endTxt{
     text-align: center;
 }
 
@@ -254,5 +205,157 @@ th,td {
     border: 1px solid #aaa;
     padding: 5px;
     text-align: left;
-    font-size: 3rem;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+    header {
+        line-height: 0;
+    }
+
+    #title {
+        text-align: left;
+        font-size: 1.8em;
+        padding-top: 1.5em;
+        padding-left: 0.5em;
+    }
+
+    #quiz-name {
+        text-align: center;
+        padding-top: 0.2em;
+        padding-bottom: 1.2em;
+    }
+    
+    img {
+        width: 100%;
+        max-width: 23rem;
+        border-radius: 20px;
+    }
+    
+    #num-question {
+        font-size: 1.5rem;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        text-shadow: lightgray 2px 2px;
+    }
+    
+    .question {
+        display: flex;
+        background: linear-gradient(#E6E6E6, #F7F7F7);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+        align-items: center;
+        min-height: 13rem;
+        margin-bottom: 2rem;
+        font-size: .7rem;
+        font-size: 1rem;
+        width: auto;
+    }
+    
+    .question.info {
+        display: flex;
+        background: linear-gradient(#272932, #474A58);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+        align-items: center;
+        min-height: 13rem;
+        height: auto;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        color: #F7F7F7;
+    }
+    
+    .question h3 {
+        padding-left: 3rem;
+    }
+    
+    .buttons button {
+        background: linear-gradient(#272932, #474A58);
+        color: #F7F7F7;
+        border-radius: .5rem;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    
+        display: inline-flex;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+    
+    .buttons button:hover:enabled {
+        background: linear-gradient(#202129, #33353f);
+        color: #d1cece;
+        border-radius: .5rem;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    
+        display: inline-flex;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+    
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+    }
+    
+    .next {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+    }
+    
+    #nextButton {
+        padding: 1rem;
+        border-radius: .5rem;
+        font-size: 1.3rem;
+        background-color: #F7F7F7;
+    }
+    
+    #nextButton:hover:enabled {
+        padding: 1rem;
+        border-radius: .5rem;
+        font-size: 1.3rem;
+        background-color: #d9dadf;
+    }
+    
+    .valid {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        font-size: 2rem;
+    }
+    
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#474A58, #272932);
+        padding: .8rem 0 .8rem 0;
+        color: #F7F7F7;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+    }
+    
+    
+    .progressbar {
+        height: 2em;
+        background-repeat: no-repeat;
+        background-size: 0;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+        border-radius: 20px;
+    }
+    
+    th,td {
+        border: 1px solid #aaa;
+        padding: 5px;
+        text-align: left;
+        font-size: 2rem;
+    }
 }

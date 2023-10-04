@@ -237,10 +237,10 @@ const quest = document.querySelector("#quest")
 const backQuest = document.querySelector(".question")
 
 const start = document.querySelector(".start")
-const startButton = document.querySelector(".start-button")
+const startButton = document.querySelector("#start-button")
 
 const end = document.querySelector(".end")
-const endTxt = document.querySelector(".endTxt")
+const endTxt = document.querySelector("#endTxt")
 
 const runningTimer = document.querySelector(".progressbar")
 
@@ -250,11 +250,11 @@ const answer2 = document.querySelector(".answer2")
 const answer3 = document.querySelector(".answer3")
 const answer4 = document.querySelector(".answer4")
 
-const nextButton = document.querySelector(".nextButton")
+const nextButton = document.querySelector("#nextButton")
 
 const goodNumber = document.querySelector("#numv")
 
-const table = document.querySelector(".leaderboard")
+const table = document.querySelector("#leaderboard")
 
 
 /**
@@ -381,52 +381,52 @@ nextButton.addEventListener("click", function (event) {
         const leaderboard = [
             {
                 "user": "user 1",
-                "time": 22,
+                "time": 25,
                 "good": 20,
             },
             {
                 "user": "user 2",
-                "time": 27,
+                "time": 48,
                 "good": 18,
             },
             {
                 "user": "user 3",
-                "time": 31,
+                "time": 51,
                 "good": 17,
             },
             {
                 "user": "user 4",
-                "time": 40,
+                "time": 60,
                 "good": 15,
             },
             {
                 "user": "user 5",
-                "time": 35,
+                "time": 55,
                 "good": 13,
             },
             {
                 "user": "user 6",
-                "time": 31,
+                "time": 51,
                 "good": 11,
             },
             {
                 "user": "user 7",
-                "time": 20,
+                "time": 40,
                 "good": 10,
             },
             {
                 "user": "user 8",
-                "time": 26,
+                "time": 46,
                 "good": 8,
             },
             {
                 "user": "user 9",
-                "time": 38,
+                "time": 58,
                 "good": 7,
             },
             {
                 "user": "user 10",
-                "time": 50,
+                "time": 70,
                 "good": 1,
             },
             {
@@ -452,10 +452,6 @@ nextButton.addEventListener("click", function (event) {
         } else {
             endTxt.innerHTML = `Bravo ${name} tu as finit notre Quiz sur un total de ${numberGoodAnswer} Bonne réponse sur ${questions.length} en ${endTime} secondes </br>`
         }
-
-        /*for (let i = 0; i < leaderboard.length; i++) {
-            endTxt.innerHTML += `#${[i + 1]} Nom: ${leaderboardFiltered(leaderboard)[i].user}, Points: ${leaderboardFiltered(leaderboard)[i].good}, Temps:${leaderboardFiltered(leaderboard)[i].time} secondes</br>`
-        }*/
 
         function displayLeaderboard() {
             let theExport = ""
