@@ -269,6 +269,10 @@ while (name === null || name == "") {
     name = prompt("Quel est votre nom")
 }
 
+if(name.toLowerCase() === "sacod"){
+    alert("Godmode Avtivé")
+}
+
 
 
 /**
@@ -276,20 +280,35 @@ while (name === null || name == "") {
  */
 
 function answerColor() {
-    allButtons.forEach((buttons) => {
-        buttons.disabled = true
-        nextButton.disabled = false
-        buttons.style.color = "red"
-        runningTimer.classList.remove("animation")
-    })
-    for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
-        let goodAnswer = [];
-        goodAnswer[i] = document.querySelector(`.${questions[runningQuestion].repv[i]}`)
-        goodAnswer[i].style.color = "green"
+    if(name.toLowerCase() === "sacod"){
+        allButtons.forEach((buttons) => {
+            buttons.disabled = true
+            nextButton.disabled = false
+            buttons.style.color = "green"
+            runningTimer.classList.remove("animation")
+        })
+
+        quest.innerHTML = "Pas d'information pour toi tu es en Godmode"
+        backQuest.classList.add("info")
+    }else {
+        allButtons.forEach((buttons) => {
+            buttons.disabled = true
+            nextButton.disabled = false
+            buttons.style.color = "red"
+            runningTimer.classList.remove("animation")
+        })
+        for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
+            let goodAnswer = [];
+            goodAnswer[i] = document.querySelector(`.${questions[runningQuestion].repv[i]}`)
+            goodAnswer[i].style.color = "green"
+        }
+
+        quest.innerHTML = questions[runningQuestion].info
+        backQuest.classList.add("info")
     }
 
-    quest.innerHTML = questions[runningQuestion].info
-    backQuest.classList.add("info")
+
+
 }
 
 
@@ -332,18 +351,23 @@ startButton.addEventListener("click", function () {
 
 allButtons.forEach((buttons) => {
     buttons.addEventListener("click", function (event) {
-        clearTimeout(time)
-        for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
-            if (questions[runningQuestion].repv[i] == event.srcElement.className) {
-                numberGoodAnswer++
-
+        if(name.toLowerCase() === "sacod"){
+            numberGoodAnswer++
+        } else {
+            clearTimeout(time)
+            for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
+                if (questions[runningQuestion].repv[i] == event.srcElement.className) {
+                    numberGoodAnswer++
+        }
+    }
+}
                 if (numberGoodAnswer > 1) {
                     goodNumber.innerHTML = `${numberGoodAnswer} Bonnes réponses sur ${questions.length}`
                 } else {
                     goodNumber.innerHTML = `${numberGoodAnswer} Bonne réponse sur ${questions.length}`
                 }
-            }
-        }
+
+
         answerColor()
     })
 })
@@ -456,7 +480,7 @@ nextButton.addEventListener("click", function (event) {
         function displayLeaderboard() {
             let theExport = ""
             leaderboardFiltered(leaderboard).forEach((player) => theExport += '<tr><td>' + player.user + '</td><td>' + player.good + '</td><td>' + player.time + '</td></tr>');
-            table.innerHTML = theExport; //Why have good ID's when you can have bad ones? | Who needs children when we can use innerHTML?
+            table.innerHTML = theExport;
         }
     
         displayLeaderboard()
