@@ -230,6 +230,12 @@ let numberGoodAnswer = 0
 let time
 let startTime
 let name
+let timerSong = new Audio('assets/Timer.mp3')
+let fond = new Audio('assets/info-tapis.mp3')
+let fondGod = new Audio('assets/Skyrim_Theme.mp3')
+
+fondGod.loop = true
+fond.loop = true
 
 const questionNumber = document.querySelector("#num-question")
 
@@ -257,6 +263,8 @@ const goodNumber = document.querySelector("#numv")
 
 const table = document.querySelector("#leaderboard")
 
+const muteButton = document.querySelector("#mute")
+
 
 /**
  * Execution au lancement
@@ -278,6 +286,8 @@ function answerColor() {
             nextButton.disabled = false
             buttons.style.color = "green"
             runningTimer.classList.remove("animation")
+            timerSong.pause()
+            timerSong.currentTime = 0
         })
 
         quest.innerHTML = "Pas d'information pour toi tu es en Godmode"
@@ -288,6 +298,8 @@ function answerColor() {
             nextButton.disabled = false
             buttons.style.color = "red"
             runningTimer.classList.remove("animation")
+            timerSong.pause()
+            timerSong.currentTime = 0
         })
         for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
             let goodAnswer = [];
@@ -311,6 +323,7 @@ function answerColor() {
 function timer() {
     clearTimeout(time)
     runningTimer.classList.add("animation")
+    timerSong.play()
 
     time = window.setTimeout(function () {
         answerColor()
@@ -327,7 +340,14 @@ startButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     if(name.toLowerCase() === "sacod"){
-        alert("Godmode Activé")
+        const godmode = new Audio("assets/God_Mode.mp3")
+        godmode.play()
+        setTimeout(function () {
+            fondGod.play()
+        }, 1000)
+
+    } else {
+        fond.play()
     }
 
     startTime = Math.round(Date.now() / 1000)
@@ -375,7 +395,7 @@ allButtons.forEach((buttons) => {
 /**
  * Next Button
  */
-nextButton.addEventListener("click", function (event) {
+nextButton.addEventListener("click", function () {
 
     nextButton.disabled = true
 
@@ -488,4 +508,32 @@ nextButton.addEventListener("click", function (event) {
         displayLeaderboard()
     }
 
+})
+
+
+/**
+ * Mute Button
+*/
+
+muteButton.addEventListener("click", function () {
+        if(mute == false){
+            mute = true
+        } else {
+            mute = false
+        }
+
+        if(name.toLowerCase() === "sacod"){
+            if(mute == true){
+                fondGod.pause()
+            } else {
+                fondGod.play()
+            }
+
+        } else {
+            if(mute == true){
+                fond.pause()
+            } else {
+                fond.play()
+            }
+        }
 })

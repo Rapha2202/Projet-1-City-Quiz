@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vogue Merry - Quiz</title>
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <body>
     <div class="start">
 
-        <form action="" method="get" class="form-example" name="name">
+
             <div class="form-example">
-              <br for="name">Quel est votre nom? </br></label>
-              <input type="text" name="name" id="name" required />
+                <form action="" method="get" name="name">
+                    <label for="name" id="questName">Quel est votre nom? <br></label>
+                    <input type="text" name="name" id="name">
+                    <input id="start-button" type="submit" value="Start">
+                </form>
             </div>
-            <div class="form-example">
-              <input id="start-button" type="submit" value="Start"/>
-            </div>
-          </form>
+
 
     </div>
 
@@ -69,6 +68,7 @@
     </main>
 
     <footer>
+        <button id="mute">Mute / Unmute</button>
         © Wilder 2023
     </footer>
 

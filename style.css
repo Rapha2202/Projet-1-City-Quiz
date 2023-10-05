@@ -208,6 +208,25 @@ th,td {
     font-size: 1rem;
 }
 
+.form-example{
+    background-color: #F7F7F7;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #272932;
+}
+
+#name{
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+#questName{
+    font-size: 1.5rem;
+}
+
 @media screen and (min-width: 750px) {
     header {
         line-height: 0;
@@ -359,3 +378,4 @@ th,td {
         font-size: 2rem;
     }
 }
+
