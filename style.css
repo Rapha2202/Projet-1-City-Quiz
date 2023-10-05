@@ -128,7 +128,8 @@ footer {
 
 #mute_button {
     border-radius: 2em;
-    background-color: #F7F7F7
+    background-color: #F7F7F7;
+    width: 5rem;
 }
 
 #mute_button:hover {

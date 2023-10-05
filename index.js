@@ -265,6 +265,7 @@ const goodNumber = document.querySelector("#numv")
 const table = document.querySelector("#leaderboard")
 
 const muteButton = document.querySelector("#mute")
+const muteBtn = document.querySelector("#mute_button")
 
 
 /**
@@ -526,15 +527,19 @@ muteButton.addEventListener("click", function () {
         if(name.toLowerCase() === "sacod"){
             if(mute == true){
                 fondGod.pause()
+                muteBtn.innerHTML = "<i class=\"fa fa-volume-off fa-2x\">"
             } else {
                 fondGod.play()
+                muteBtn.innerHTML = "<i class=\"fa fa-volume-up fa-2x\">"
             }
 
         } else {
             if(mute == true){
                 fond.pause()
+                muteBtn.innerHTML = "<i class=\"fa fa-volume-off fa-2x\">"
             } else {
                 fond.play()
+                muteBtn.innerHTML = "<i class=\"fa fa-volume-up fa-2x\">"
             }
         }
 })
