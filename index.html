@@ -4,13 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Quiz</title>
-    <script src="index.js"></script>
+    <title>Vogue Merry - Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="start">
 
+
+            <div class="form-example">
+                <form action="" method="get" name="name">
+                    <label for="name" id="questName">Quel est votre nom? <br></label>
+                    <input type="text" name="name" id="name">
+                    <input id="start-button" type="submit" value="Start">
+                </form>
+            </div>
+
+
+    </div>
+
+    <div class="end">
+        <table>
+            <thead>
+                <tr><th id="endTxt" colspan="3"></th></tr>
+              <tr><th>Joueur</th><th>Score</th><th>Temps</th></tr>
+            </thead>
+            <tbody id="leaderboard"></tbody>
+        </table></p>
+    </div>
+
+
+
+    <header>
+        <h1 id="title">The Vogue Merry</h1>
+        <h2 id="quiz-name">GENERAL QUIZ</h2>
+    </header>
+
+    <main>
+            <h3 id="num-question">Question 1 sur 20 :</h3>
+           
+        <section class="question">
+            <img src="assets/wcs.jpg" alt="Image de question" id="img">
+            <h3 id="quest">Ici sera affiché la question après le début du Quiz</h3>
+        </section>
+
+        <div class="progressbar"></div>
+
+        <div class="buttons">
+            <button class="answer1">Réponse A</button>
+            <button class="answer2">Réponse B</button>
+            <button class="answer3">Réponse C</button>
+            <button class="answer4">Réponse D</button>
+        </div>
+
+        <div class="next">
+            <button id="nextButton">Question Suivante</button>
+        </div>
+
+
+        <section class="valid">
+            <h4 id="numv">0 réponse ✅ sur 20</h4>
+        </section>
+    </main>
+
+    <footer>
+        <p id="wcs"></p>© Wilder 2023
+        <div id="mute">
+            <button id="mute_button">Mute / Unmute</button>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>

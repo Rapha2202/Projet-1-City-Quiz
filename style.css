@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #F7F7F7;
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 5px darkgrey;
+}
+
+#title {
+    font-size: 1.5em;
+    padding-top: 0.5em;
+}
+
+#quiz-name {
+    font-size: 1em;
+    padding-bottom: 0.5em;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+}
+
+
+main {
+    padding-top: 1.2em;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+#num-question {
+    color: #272932;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.question {
+    background: linear-gradient(#E6E6E6, #F7F7F7);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px darkgrey;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #272932;
+    font-size: .8rem;
+}
+
+.question.info {
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    font-size: .7rem;
+}
+
+.buttons button {
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(#272932, #474A58);
+    color: #F7F7F7;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
+}
+
+.buttons button:hover:enabled {
+    background: linear-gradient(#202129, #33353f);
+    color: #d1cece;
+    border: none;
+    border-radius: 15px;
+    padding: 1em;
+    box-shadow: 0px 5px 5px darkgrey;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+}
+
+.next {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#nextButton {
+    padding: .5rem;
+    border-radius: 1rem;
+    font-size: .8rem;
+    background-color: #F7F7F7;
+}
+
+#nextButton:hover:enabled {
+    background-color: #d9dadf;
+}
+
+.valid {
+    color: #272932;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+footer {
+    background: linear-gradient(#474A58, #272932);
+    color: #F7F7F7;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 0.5em;
+}
+
+#mute {
+    text-align: right;
+    margin-top: -1.2em;
+    margin-right: 1em;
+}
+
+#mute_button {
+    border-radius: 2em;
+    background-color: #F7F7F7
+}
+
+#mute_button:hover {
+    background-color: #d9dadf;
+}
+
+#wcs {
+    margin-top: 0.2em;
+}
+
+.start {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.781);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+
+#start-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    width: 15rem;
+    height: 4rem;
+    font-size: 2rem;
+}
+
+#start-button:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    width: 15rem;
+    height: 4rem;
+    font-size: 2rem;
+    background-color: #d9dadf;
+}
+
+.progressbar {
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.progressbar {
+    border: 0.2px solid #aaa;
+    background-image: linear-gradient(to left, #474A58, #272932 100%);
+}
+
+.progressbar.animation {
+    background-size: 100%;
+    transition: background-size 10s linear;
+}
+
+.end {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.781);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#endTxt{
+    text-align: center;
+}
+
+
+table {
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255);
+    border: 2px solid black;
+}
+
+th,td {
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.form-example {
+    background-color: #F7F7F7;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #272932;
+}
+
+#name{
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+#questName {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 782px) {
+    header {
+        line-height: 0;
+    }
+
+    #title {
+        text-align: left;
+        font-size: 1.8em;
+        padding-top: 1.2em;
+        padding-left: 0.5em;
+    }
+
+    #quiz-name {
+        text-align: center;
+        padding-top: 0.2em;
+        padding-bottom: 2em;
+    }
+    main {
+        margin-left: 16%;
+        margin-right: 16%;
+        padding-top: 2em;
+    }
+    img {
+        width: 300px;
+        height: 200px;
+        max-width: 23rem;
+        border-radius: 20px;
+    }
+    
+    #num-question {
+        font-size: 1.5rem;
+        text-shadow: lightgray 2px 2px;
+    }
+    
+    .question {
+        display: flex;
+        background: linear-gradient(#E6E6E6, #F7F7F7);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+        align-items: center;
+        min-height: 13rem;
+        margin-bottom: 1.8rem;
+        font-size: .7rem;
+        font-size: 1rem;
+        width: auto;
+    }
+    
+    .question.info {
+        display: flex;
+        background: linear-gradient(#272932, #474A58);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+        align-items: center;
+        min-height: 13rem;
+        height: auto;
+        margin-bottom: 1.8rem;
+        font-size: 1rem;
+        color: #F7F7F7;
+    }
+    
+    .question h3 {
+        padding-left: 3rem;
+    }
+    
+    .buttons button {
+        background: linear-gradient(#272932, #474A58);
+        color: #F7F7F7;
+        border-radius: 1rem;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    
+        display: inline-flex;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+    
+    .buttons button:hover:enabled {
+        background: linear-gradient(#202129, #33353f);
+        color: #d1cece;
+        border-radius: 1.5rem;
+        box-shadow: .2rem .2rem .2rem .2rem lightgray;
+    
+        display: inline-flex;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+    
+    .buttons {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+        padding: 1em;
+    }
+    
+    .next {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    #nextButton {
+        padding: 1rem;
+        border-radius: 2rem;
+        font-size: 1.3rem;
+        background-color: #F7F7F7;
+    }
+    
+    #nextButton:hover:enabled {
+        padding: 1rem;
+        font-size: 1.3rem;
+        background-color: #d9dadf;
+    }
+    
+    .valid {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+        z-index: 5;
+    }
+    
+    .progressbar {
+        height: 2em;
+        background-repeat: no-repeat;
+        background-size: 0;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+    }
+    
+    th,td {
+        border: 1px solid #aaa;
+        padding: 5px;
+        text-align: left;
+        font-size: 2rem;
+    }
+}
