@@ -96,6 +96,7 @@ main {
     border-radius: 1rem;
     font-size: .8rem;
     background-color: #F7F7F7;
+    color: #272932;
 }
 
 #nextButton:hover:enabled {
@@ -130,6 +131,7 @@ footer {
     border-radius: 2em;
     background-color: #F7F7F7;
     width: 5rem;
+    color: #272932;
 }
 
 #mute_button:hover {
@@ -160,6 +162,7 @@ footer {
     width: 15rem;
     height: 4rem;
     font-size: 2rem;
+    color: #272932;
 }
 
 #start-button:hover {

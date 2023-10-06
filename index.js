@@ -286,7 +286,7 @@ function answerColor() {
         allButtons.forEach((buttons) => {
             buttons.disabled = true
             nextButton.disabled = false
-            buttons.style.color = "green"
+            buttons.style.color = "#1BE95C"
             runningTimer.classList.remove("animation")
             timerSong.pause()
             timerSong.currentTime = 0
@@ -306,7 +306,7 @@ function answerColor() {
         for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
             let goodAnswer = [];
             goodAnswer[i] = document.querySelector(`.${questions[runningQuestion].repv[i]}`)
-            goodAnswer[i].style.color = "green"
+            goodAnswer[i].style.color = "#1BE95C"
         }
 
         quest.innerHTML = questions[runningQuestion].info
