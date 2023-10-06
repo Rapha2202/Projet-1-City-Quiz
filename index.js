@@ -304,7 +304,8 @@ function answerColor() {
             timerSong.currentTime = 0
         })
 
-        quest.innerHTML = "Pas d'information pour toi tu es en Godmode"
+        quest.innerHTML = "Pas d'information pour toi tu es en version de test"
+
         backQuest.classList.add("info")
     }else{
         allButtons.forEach((buttons) => {
