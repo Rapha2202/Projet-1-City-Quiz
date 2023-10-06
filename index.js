@@ -294,20 +294,7 @@ function answerColor() {
 
         quest.innerHTML = "Pas d'information pour toi tu es en Godmode"
         backQuest.classList.add("info")
-    }else if(name.toLowerCase() === "test"){
-        allButtons.forEach((buttons) => {
-            buttons.disabled = true
-            nextButton.disabled = false
-            buttons.style.color = "#1BE95C"
-            runningTimer.classList.remove("animation")
-            timerSong.pause()
-            timerSong.currentTime = 0
-        })
-
-        quest.innerHTML = "Pas d'information pour toi tu es en version de test"
-
-        backQuest.classList.add("info")
-    }else{
+    } else {
         allButtons.forEach((buttons) => {
             buttons.disabled = true
             nextButton.disabled = false
@@ -387,9 +374,7 @@ allButtons.forEach((buttons) => {
     buttons.addEventListener("click", function (event) {
         if(name.toLowerCase() === "sacod"){
             numberGoodAnswer++
-        } else if(name.toLowerCase() === "test"){
-            numberGoodAnswer++
-        } else{
+        } else {
             clearTimeout(time)
             for (let i = 0; i < questions[runningQuestion].repv.length; i++) {
                 if (questions[runningQuestion].repv[i] == event.srcElement.className) {
