@@ -201,7 +201,7 @@ const questions = [
         "id": 19,
         "questiontxt": "Dans Hunter x Hunter comment est mort Meruem le roi des fourmi chimeres ?",
         "image": "assets/Meruem.jpg",
-        "answer1": "Super attaque du Héro",
+        "answer1": "Super attaque du Héros",
         "answer2": "Insecticide",
         "answer3": "Bombe Nucléaire",
         "answer4": "Noyade",
